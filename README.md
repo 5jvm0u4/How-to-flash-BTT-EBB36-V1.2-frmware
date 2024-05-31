@@ -52,10 +52,6 @@ serial: /dev/serial/by-id/usb-Klipper_stm32g0b1xx_070023000F504B5735313720-if00
 
 # Old Method
 
-
-///Just in case the link broke, I've archived it's content at the bottom of this page
-
-
 (Open PuTTY, connect to your klipper)
 
 cd ~/klipper
