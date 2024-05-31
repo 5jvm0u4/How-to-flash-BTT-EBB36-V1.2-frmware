@@ -1,7 +1,9 @@
 # How to flash EBB32 V1.2's frmware THE OLD WAY
 
-# To do it the newer and easier way, follow this guide: https://docs.meteyou.wtf/btt-ebb/klipper/
-# But still make sure config matches the ones down below on THIS page, not the ones in that guide
+### To do it the newer and easier way, follow this guide: https://docs.meteyou.wtf/btt-ebb/klipper/
+### But still make sure config matches the ones down below on THIS page, not the ones in that guide
+///Just in case the link broke, I archived it's content at the bottom of this page
+
 
 (Open PuTTY, connect to your klipper)
 
@@ -44,6 +46,32 @@ make
 (and now you're done, close everything and remove the jumpper)
 
 
+## Archive session
 
- 
+![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/3e5e01b7-0b48-489b-8ca8-9fa94a347ce1)
+
+cd ~/klipper
+
+make menuconfig
+
+(this config is not the ones on that page, but rather changed to match the ones on this page, above, which is THE one you should follow)
+
+![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/6b4369f3-f6cc-4ef8-9640-7e1f25e3c8bf)
+
+(First, you have to put the board into DFU mode. To do this, press and hold the boot button and then disconnect and reconnect the power supply, or press the reset button on the board. With the command dfu-util -l, you can check if the board is in DFU mode.)
+
+dfu-util -l
+
+![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/28b50117-d96c-45d1-9a96-512ebfa427c5)
+
+(If your board is in DFU mode, you can flash Klipper with the following command:)
+
+dfu-util -a 0 -D ~/klipper/out/klipper.bin -s 0x08000000:mass-erase:force:leave
+
+![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/b8b9a88c-c0e5-45c0-b873-942196debdea)
+
+(and now you're done, close everything and remove the jumpper)
+
+
+
  
