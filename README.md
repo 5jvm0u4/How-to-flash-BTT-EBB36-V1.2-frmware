@@ -2,7 +2,7 @@
 
 ### To do it the newer and easier way, follow this guide: https://docs.meteyou.wtf/btt-ebb/klipper/
 ### But still make sure config matches the ones down below on THIS page, not the ones in that guide
-///Just in case the link broke, I archived it's content at the bottom of this page
+///Just in case the link broke, I've archived it's content at the bottom of this page
 
 
 (Open PuTTY, connect to your klipper)
