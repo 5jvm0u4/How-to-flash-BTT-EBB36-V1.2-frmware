@@ -97,7 +97,7 @@ dfu-util -a 0 -D ~/klipper/out/klipper.bin -s 0x08000000:mass-erase:force:leave
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/b8b9a88c-c0e5-45c0-b873-942196debdea)
 
-(run this commend to get your MCU's ID)
+(then run this commend to get your MCU's ID)
 
 ls /dev/serial/by-id/*
 
