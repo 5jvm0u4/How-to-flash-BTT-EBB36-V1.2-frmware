@@ -2,6 +2,8 @@
 
 # New Method
 
+(Open PuTTY, SSH into your klipper)
+
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/3e5e01b7-0b48-489b-8ca8-9fa94a347ce1)
 
 cd ~/klipper
@@ -52,7 +54,7 @@ serial: /dev/serial/by-id/usb-Klipper_stm32g0b1xx_070023000F504B5735313720-if00
 
 # Old Method
 
-(Open PuTTY, connect to your klipper)
+(Open PuTTY, SSH into your klipper)
 
 cd ~/klipper
 
