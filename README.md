@@ -1,4 +1,4 @@
-# How to flash EBB32 V1.2's frmware THE OLD WAY
+# How to flash EBB32 V1.2's frmware (Two Methods)
 
 ### To do it the newer and easier way, follow this guide: https://docs.meteyou.wtf/btt-ebb/klipper/
 ### But still make sure config matches the ones down below on THIS page, not the ones in that guide
