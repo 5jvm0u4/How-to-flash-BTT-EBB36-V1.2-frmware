@@ -85,7 +85,7 @@ make
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/74619e42-d226-4aaf-9c7b-931e311eff21)
 
-(plug the board to your Raspberry Pi or anything you're running your klipper on via onboard USB type-C connector, press and hold the BOOT botton and while holding BOOT, press and release RST botton, then release BOOT, this will make the board enter DUF-Mode, you can check it by running commend: dfu-util -l)
+(plug the board to your Raspberry Pi, or anything you're running your klipper on, via onboard USB type-C connector, press and hold the BOOT botton and while holding BOOT, press and release RST botton, then release BOOT, this will make the board enter DUF-Mode, you can check it by running commend: dfu-util -l)
 
 dfu-util -l
 
