@@ -43,7 +43,24 @@ make
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/e4522e1b-da43-4546-8f7f-cef41fb38c8b)
 
-(and now you're done, close everything and remove the jumpper)
+(and now you're done for firmware flashing, close everything and remove the jumpper)
+
+(connect everything accordingly, power up your printer and run this commend via ssh)
+
+ls /dev/serial/by-id/*
+
+(you'll likely get something like this but not exceally the same
+
+/dev/serial/by-id/usb-Klipper_stm32g0b1xx_4B002F000950304158373420-if00)
+
+(copy this and paste it on your config file as so:)
+
+[mcu EBBCan]
+
+serial: /dev/serial/by-id/usb-Klipper_stm32g0b1xx_070023000F504B5735313720-if00
+
+(hit reboot)
+
 
 
 ## Archive session
@@ -58,7 +75,17 @@ make menuconfig
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/6b4369f3-f6cc-4ef8-9640-7e1f25e3c8bf)
 
-(then, you have to put the board into DFU mode. To do this, press and hold the boot button and then press the reset button on the board. With the command dfu-util -l, you can check if the board is in DFU mode.)
+Q(Quit)
+
+Y(Yes)
+
+make
+
+(Get your board, add a jumper(green arrow) to make it powered by USB, remember to remove it after everything is done)
+
+![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/74619e42-d226-4aaf-9c7b-931e311eff21)
+
+(plug the board to your Raspberry Pi or anything you're running your klipper on via onboard USB type-C connector, press and hold the BOOT botton and while holding BOOT, press and release RST botton, then release BOOT, this will make the board enter DUF-Mode, you can check it by running commend: dfu-util -l)
 
 dfu-util -l
 
@@ -70,7 +97,21 @@ dfu-util -a 0 -D ~/klipper/out/klipper.bin -s 0x08000000:mass-erase:force:leave
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/b8b9a88c-c0e5-45c0-b873-942196debdea)
 
-(and now you're done, close everything and remove the jumpper)
+(run this commend to get your MCU's ID)
+
+ls /dev/serial/by-id/*
+
+(you'll likely get something like this but not exceally the same
+
+/dev/serial/by-id/usb-Klipper_stm32g0b1xx_4B002F000950304158373420-if00)
+
+(copy this and paste it on your config file as so:)
+
+[mcu EBBCan]
+
+serial: /dev/serial/by-id/usb-Klipper_stm32g0b1xx_070023000F504B5735313720-if00
+
+(hit reboot)
 
 
 
