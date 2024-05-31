@@ -58,7 +58,7 @@ make menuconfig
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/6b4369f3-f6cc-4ef8-9640-7e1f25e3c8bf)
 
-(First, you have to put the board into DFU mode. To do this, press and hold the boot button and then disconnect and reconnect the power supply, or press the reset button on the board. With the command dfu-util -l, you can check if the board is in DFU mode.)
+(then, you have to put the board into DFU mode. To do this, press and hold the boot button and then press the reset button on the board. With the command dfu-util -l, you can check if the board is in DFU mode.)
 
 dfu-util -l
 
