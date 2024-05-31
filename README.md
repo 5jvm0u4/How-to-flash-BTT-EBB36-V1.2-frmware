@@ -1,4 +1,4 @@
-# How-to-flash-EBB32-s-frmware
+# How to flash EBB32 V1.2's frmware
 
 cd ~/klipper
 
