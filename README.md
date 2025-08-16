@@ -1,56 +1,56 @@
 # How to flash EBB36 V1.2's frmware (Two Methods)
 
 # New Method
+### Reference: https://docs.meteyou.wtf/btt-ebb/klipper/
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/3e5e01b7-0b48-489b-8ca8-9fa94a347ce1)
 
-(Open PuTTY, SSH into your klipper)
+Open PuTTY, SSH into your klipper
 
-cd ~/klipper
+<pre>cd ~/klipper 
+make menuconfig</pre>
 
-make menuconfig
-
-(this config is not the ones on that page, but rather changed to match the ones on this page, above, which is THE one you should follow)
+Config should look like this
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/6b4369f3-f6cc-4ef8-9640-7e1f25e3c8bf)
 
-Q(Quit)
+<pre>Q(Quit)
+Y(Yes)</pre>
 
-Y(Yes)
+<pre>make clean
+make</pre>
 
-make
-
-(Get your board, add a jumper(green arrow) to make it powered by USB, remember to remove it after everything is done)
+Get your board, add a jumper(green arrow) to make it powered by USB, remember to remove it after everything is done.
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/74619e42-d226-4aaf-9c7b-931e311eff21)
 
-(plug the board to your Raspberry Pi, or anything you're running your klipper on, via onboard USB type-C connector, press and hold the BOOT botton and while holding BOOT, press and release RST botton, then release BOOT, this will make the board enter DUF-Mode, you can check it by running commend: dfu-util -l)
+Plug the board to your Raspberry Pi, or anything you're running your klipper on, via onboard USB type-C connector, press and hold the BOOT, press and release RST, then release BOOT, this will make the board enter DUF-Mode, you can check it by running this commend:
 
-dfu-util -l
+<pre>dfu-util -l</pre>
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/28b50117-d96c-45d1-9a96-512ebfa427c5)
 
-(If your board is in DFU mode, you can flash Klipper with the following command:)
+If your board is in DFU mode, you can flash Klipper with the following command:
 
-dfu-util -a 0 -D ~/klipper/out/klipper.bin -s 0x08000000:mass-erase:force:leave
+<pre>dfu-util -a 0 -D ~/klipper/out/klipper.bin -s 0x08000000:mass-erase:force:leave</pre>
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/b8b9a88c-c0e5-45c0-b873-942196debdea)
 
-(then run this commend to get your MCU's ID)
+After flashing, run this commend to get your MCU's ID.
 
-ls /dev/serial/by-id/*
+<pre>ls /dev/serial/by-id/*</pre>
 
-(you'll likely get something like this but not exceally the same
+You'll see something like this:
 
-/dev/serial/by-id/usb-Klipper_stm32g0b1xx_4B002F000950304158373420-if00)
+<pre>/dev/serial/by-id/usb-Klipper_stm32g0b1xx_XXXXXXXXXXXXXXXXXXXXXXXX-if00</pre>
 
-(copy this and paste it on your config file as so:)
+Copy this and paste it on your klipper config file as so:
 
-[mcu EBBCan]
+<pre>[mcu EBBCan]
 
-serial: /dev/serial/by-id/usb-Klipper_stm32g0b1xx_070023000F504B5735313720-if00
+serial: /dev/serial/by-id/usb-Klipper_stm32g0b1xx_XXXXXXXXXXXXXXXXXXXXXXXX-if00</pre>
 
-### Reference: https://docs.meteyou.wtf/btt-ebb/klipper/
+
 
 # Old Method
 
