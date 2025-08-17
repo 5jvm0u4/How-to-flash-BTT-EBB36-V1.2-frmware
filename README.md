@@ -5,7 +5,7 @@
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/3e5e01b7-0b48-489b-8ca8-9fa94a347ce1)
 
-Open PuTTY, SSH into your klipper
+SSH into your host
 
 <pre>cd ~/klipper 
 make menuconfig</pre>
