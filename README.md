@@ -7,8 +7,8 @@
 
 SSH into your host
 
-<pre>cd ~/klipper 
-make menuconfig</pre>
+    cd ~/klipper 
+    make menuconfig
 
 Config should look like this
 
@@ -17,8 +17,8 @@ Config should look like this
 <pre>Q(Quit)
 Y(Yes)</pre>
 
-<pre>make clean
-make</pre>
+    make clean
+    make
 
 Get your board, add a jumper(green arrow) to make it powered by USB, remember to remove it after everything is done.
 
@@ -26,19 +26,19 @@ Get your board, add a jumper(green arrow) to make it powered by USB, remember to
 
 Plug the board to your Klipper host(usually a RPI), via onboard USB type-C connector, press and hold the BOOT, press and release RST, then release BOOT, this will make the board enter DFU-Mode, you can check it by running this commend:
 
-<pre>dfu-util -l</pre>
+    dfu-util -l
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/28b50117-d96c-45d1-9a96-512ebfa427c5)
 
 If your board is in DFU mode, you can flash Klipper with the following command:
 
-<pre>dfu-util -a 0 -D ~/klipper/out/klipper.bin -s 0x08000000:mass-erase:force:leave</pre>
+    dfu-util -a 0 -D ~/klipper/out/klipper.bin -s 0x08000000:mass-erase:force:leave
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/b8b9a88c-c0e5-45c0-b873-942196debdea)
 
 After flashing, run this commend to get your MCU's ID.
 
-<pre>ls /dev/serial/by-id/*</pre>
+    ls /dev/serial/by-id/*
 
 You'll see something like this:
 
