@@ -24,7 +24,7 @@ Get your board, add a jumper(green arrow) to make it powered by USB, remember to
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/74619e42-d226-4aaf-9c7b-931e311eff21)
 
-Plug the board to your Raspberry Pi, or anything you're running your klipper on, via onboard USB type-C connector, press and hold the BOOT, press and release RST, then release BOOT, this will make the board enter DUF-Mode, you can check it by running this commend:
+Plug the board to your Klipper host(usually a RPI), via onboard USB type-C connector, press and hold the BOOT, press and release RST, then release BOOT, this will make the board enter DFU-Mode, you can check it by running this commend:
 
 <pre>dfu-util -l</pre>
 
@@ -74,7 +74,7 @@ make
 
 ![image](https://github.com/5jvm0u4/How-to-flash-EBB32-s-frmware/assets/75752327/74619e42-d226-4aaf-9c7b-931e311eff21)
 
-(plug the board to your PC via onboard USB type-C connector, press and hold the BOOT botton and while holding BOOT, press and release RST botton, then release BOOT, this will make the board enter DUF-Mode)
+(plug the board to your PC via onboard USB type-C connector, press and hold the BOOT botton and while holding BOOT, press and release RST botton, then release BOOT, this will make the board enter DFU-Mode)
 
 (Open STM32CubeProgrammer and enter this page)
 
