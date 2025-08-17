@@ -46,9 +46,8 @@ You'll see something like this:
 
 Copy this and paste it on your klipper config file as so:
 
-<pre>[mcu EBBCan]
-
-serial: /dev/serial/by-id/usb-Klipper_stm32g0b1xx_XXXXXXXXXXXXXXXXXXXXXXXX-if00</pre>
+    [mcu EBBCan]
+    serial: /dev/serial/by-id/usb-Klipper_stm32g0b1xx_XXXXXXXXXXXXXXXXXXXXXXXX-if00
 
 
 
